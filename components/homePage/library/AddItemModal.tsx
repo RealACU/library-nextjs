@@ -84,9 +84,9 @@ const AddItemModal = () => {
     if (urlType !== "External Hyperlink") {
       if (
         process.env.NODE_ENV === "production" &&
-        data.url.startsWith("https://library.vercel.app")
+        data.url.startsWith("https://realacu-library.vercel.app")
       ) {
-        data.url = data.url.slice(26);
+        data.url = data.url.slice(34);
       } else if (
         process.env.NODE_ENV === "development" &&
         data.url.startsWith("http://localhost:3000")
