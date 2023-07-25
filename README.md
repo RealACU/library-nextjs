@@ -1,6 +1,6 @@
 # Full Stack Application Using Next.js 13, React, TailwindCSS, Prisma, MongoDB, and NextAuth
 
-[Project available here](https://library.vercel.app/)
+[Project available here](https://realacu-library.vercel.app/)
 
 This is the first Next.js project I made. I mostly wanted to implement the knowledge I gained from tutorials, but also wanted to provide a little value to people who want to share information. It can also be used for birthday surprises.
 
