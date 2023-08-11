@@ -6,6 +6,7 @@ import { useCallback, useMemo, useEffect, useState } from "react";
 import useRegisterModal from "@/hooks/useRegisterModal";
 import useLoginModal from "@/hooks/useLoginModal";
 import { SafeUser } from "@/types/safeUser";
+import { toast } from "react-hot-toast";
 
 interface HeroSectionProps {
   currentUser: SafeUser | null;
@@ -67,7 +68,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ currentUser }) => {
   }, []);
 
   return (
-    <header className="h-2/5 w-full flex rounded-lg shadow-xl justify-center items-center bg-neutral-200">
+    <header className="h-2/5 w-full flex justify-center items-center bg-neutral-200">
       <div className="h-4/5 w-[90%] flex rounded-lg shadow-xl justify-center items-center bg-neutral-100">
         <div className="h-4/5 w-[90%] flex flex-col p-4 rounded-lg shadow-xl justify-center items-center bg-white">
           <h1 className="text-xl">{heroText}</h1>

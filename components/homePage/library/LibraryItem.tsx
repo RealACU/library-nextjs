@@ -10,7 +10,6 @@ import saveToRecents from "@/actions/saveToRecents";
 import { isCuid } from "@paralleldrive/cuid2";
 import { BsTrash } from "react-icons/bs";
 import axios from "axios";
-import { toast } from "react-hot-toast";
 
 interface LibraryItemProps {
   currentUsername?: string;

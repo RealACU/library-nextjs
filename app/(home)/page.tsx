@@ -17,7 +17,7 @@ export default async function Home() {
     {
       id: "devitem1",
       title: "Paraphrase",
-      description: "First game",
+      description: "AI Demonstration",
       iconName: "Controller",
       imageSrc:
         "https://res.cloudinary.com/dtdiarww5/image/upload/v1689882159/xe87ik0cm0pevfzt5rb7.png",
@@ -28,6 +28,18 @@ export default async function Home() {
     },
     {
       id: "devitem2",
+      title: "Hosting Example",
+      description: "Demonstrating website hosting",
+      iconName: "Star",
+      imageSrc:
+        "https://res.cloudinary.com/dtdiarww5/image/upload/v1689882159/i1i9vekr7prg9sedfi7e.png",
+      url: "/host?id=demonstration",
+      author: "Developer Item",
+      hashedPassword: "",
+      visible: true,
+    },
+    {
+      id: "devitem3",
       title: "Chess",
       description: "Mate in 1",
       iconName: "",

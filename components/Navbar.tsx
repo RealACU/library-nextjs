@@ -38,7 +38,7 @@ const Navbar = () => {
             <Link href="/paraphrase">Paraphrase</Link>
           </li>
           <li className="flex justify-items-center items-center px-6 hover:bg-neutral-100 hover:text-primary-color">
-            <Link href="/host?id=mtdjoa3zqcp0gwtim3m7pfb6">Hosting</Link>
+            <Link href="/host?id=demonstration">Hosting</Link>
           </li>
         </Dropdown>
         <section className="relative">

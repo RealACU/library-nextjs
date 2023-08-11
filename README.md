@@ -1,4 +1,4 @@
-# Full Stack Application Using Next.js 13, React, TailwindCSS, Prisma, MongoDB, and NextAuth
+# Full Stack Application Using Next.js 13, TensorFlow.js, TailwindCSS, Prisma, MongoDB, and NextAuth
 
 [Project available here](https://realacu-library.vercel.app/)
 
@@ -12,6 +12,7 @@ Lessons I learned:
 
 Features of this website:
 
+- AI paraphrase game using TensorFlow.js
 - Styled with TailwindCSS
 - User authentication handled by NextAuth
 - Image upload using Cloudinary

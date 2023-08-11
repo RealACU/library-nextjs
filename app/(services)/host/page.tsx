@@ -8,7 +8,7 @@ import { isCuid } from "@paralleldrive/cuid2";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 
 export default function Host() {
@@ -16,31 +16,37 @@ export default function Host() {
   const openLinkModal = useOpenLinkModal();
   const searchParams = useSearchParams();
   const id = searchParams?.get("id");
-  const [url, setUrl] = useState();
+  const [url, setUrl] = useState("");
 
-  if (!id) {
-    return router.push("/");
-  }
+  useEffect(() => {
+    if (!id) {
+      return router.push("/");
+    }
 
-  axios
-    .get(`/api/gethosturl/${id}`)
-    .then((response) => {
-      const { hashedPassword, id, title, iconName, url } = response.data;
+    if (id === "demonstration") {
+      return setUrl("https://young-dear-rainbow.glitch.me/");
+    }
 
-      if (hashedPassword) {
-        if (isCuid(Cookies.get(id) || "")) {
-          setUrl(response.data.trueUrl);
-          saveToRecents({ id, title, iconName, url });
-        } else openLinkModal.open(hashedPassword, id, title, iconName, url);
-      }
+    axios
+      .get(`/api/gethosturl/${id}`)
+      .then((response) => {
+        const { hashedPassword, id, title, iconName, url } = response.data;
 
-      setUrl(response.data.trueUrl);
-      saveToRecents({ id, title, iconName, url });
-    })
-    .catch((error) => {
-      console.error(error);
-      toast.error("Something went wrong.");
-    });
+        if (hashedPassword) {
+          if (isCuid(Cookies.get(id) || "")) {
+            setUrl(response.data.trueUrl);
+            saveToRecents({ id, title, iconName, url });
+          } else openLinkModal.open(hashedPassword, id, title, iconName, url);
+        }
+
+        setUrl(response.data.trueUrl);
+        saveToRecents({ id, title, iconName, url });
+      })
+      .catch((error) => {
+        console.error(error);
+        toast.error("Something went wrong.");
+      });
+  }, []);
 
   return (
     <>
@@ -52,6 +58,7 @@ export default function Host() {
             className="overflow-hidden h-full w-full"
             height="100%"
             width="100%"
+            title="Hosted Content"
           ></iframe>
         )}
       </div>
